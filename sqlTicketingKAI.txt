@@ -1,0 +1,81 @@
+-- Membuat database
+CREATE DATABASE IF NOT EXISTS db_TicketingKeretaApi;
+
+-- Menggunakan database yang telah dibuat
+USE db_TicketingKeretaApi;
+
+-- Membuat tabel kereta_api
+CREATE TABLE IF NOT EXISTS kereta_api (
+    id_kereta INT AUTO_INCREMENT PRIMARY KEY,
+    nama_kereta VARCHAR(100),
+    st_awal VARCHAR(100),
+    st_akhir VARCHAR(100),
+    waktu_berangkat TIME,
+    waktu_tiba TIME,
+    durasi_perjalanan TIME,
+    kelas_kereta VARCHAR(50),
+    sisa_kursi INT,
+    harga_tiket DECIMAL(10,2)
+);
+
+-- Masukkan data ke dalam tabel kereta_api
+INSERT INTO kereta_api (nama_kereta, st_awal, st_akhir, waktu_berangkat, waktu_tiba, durasi_perjalanan, kelas_kereta, sisa_kursi, harga_tiket)
+VALUES
+('Argo Wilis', 'Surabaya', 'Malang', '08:00:00', '10:30:00', '02:30:00', 'Eksekutif', 50, 75000.00),
+('Gajayana', 'Surabaya', 'Malang', '07:30:00', '10:00:00', '02:30:00', 'Eksekutif', 40, 80000.00),
+('Tawang Alun', 'Surabaya', 'Probolinggo', '09:00:00', '11:30:00', '02:30:00', 'Bisnis', 60, 60000.00),
+('Sancaka', 'Surabaya', 'Malang', '06:00:00', '08:30:00', '02:30:00', 'Ekonomi', 70, 50000.00),
+('Gumarang', 'Malang', 'Surabaya', '15:00:00', '17:30:00', '02:30:00', 'Bisnis', 30, 55000.00),
+('Sembrani', 'Surabaya', 'Jember', '12:00:00', '15:30:00', '03:30:00', 'Eksekutif', 20, 90000.00),
+('Mutih', 'Surabaya', 'Blitar', '10:30:00', '13:00:00', '02:30:00', 'Ekonomi', 80, 45000.00),
+('Majapahit', 'Malang', 'Banyuwangi', '08:30:00', '14:00:00', '05:30:00', 'Ekonomi', 100, 70000.00),
+('Brantas', 'Surabaya', 'Kediri', '11:00:00', '13:30:00', '02:30:00', 'Bisnis', 40, 55000.00),
+('Ranggajati', 'Surabaya', 'Tulungagung', '09:30:00', '11:30:00', '02:00:00', 'Ekonomi', 60, 48000.00),
+('Jayabaya', 'Surabaya', 'Banyuwangi', '07:00:00', '14:00:00', '07:00:00', 'Eksekutif', 30, 100000.00),
+('Matarmaja', 'Surabaya', 'Madiun', '13:30:00', '16:30:00', '03:00:00', 'Bisnis', 50, 60000.00),
+('Gajah Wong', 'Surabaya', 'Tuban', '10:00:00', '13:00:00', '03:00:00', 'Ekonomi', 70, 52000.00),
+('Tawang Jaya', 'Surabaya', 'Malang', '06:30:00', '09:00:00', '02:30:00', 'Ekonomi', 80, 48000.00),
+('Kertajaya', 'Surabaya', 'Blitar', '14:00:00', '17:00:00', '03:00:00', 'Bisnis', 40, 58000.00),
+('Turangga', 'Surabaya', 'Madiun', '11:30:00', '14:30:00', '03:00:00', 'Eksekutif', 60, 70000.00),
+('Lodaya', 'Malang', 'Solo', '08:00:00', '15:00:00', '07:00:00', 'Bisnis', 50, 75000.00),
+('Logawa', 'Surabaya', 'Nganjuk', '09:00:00', '12:30:00', '03:30:00', 'Eksekutif', 30, 65000.00),
+('Cirebon Express', 'Surabaya', 'Probolinggo', '08:30:00', '11:00:00', '02:30:00', 'Ekonomi', 70, 50000.00),
+('Penataran', 'Surabaya', 'Blitar', '07:30:00', '10:30:00', '03:00:00', 'Bisnis', 40, 55000.00),
+('Jaka Tingkir', 'Surabaya', 'Kertosono', '10:30:00', '13:00:00', '02:30:00', 'Ekonomi', 60, 48000.00),
+('Bima', 'Surabaya', 'Banyuwangi', '12:00:00', '20:00:00', '08:00:00', 'Eksekutif', 20, 120000.00),
+('Gajahwuruk', 'Malang', 'Madiun', '09:30:00', '12:30:00', '03:00:00', 'Bisnis', 50, 60000.00),
+('Brambanan', 'Surabaya', 'Yogyakarta', '08:00:00', '15:00:00', '07:00:00', 'Eksekutif', 30, 80000.00),
+('Bangunkarta', 'Surabaya', 'Solo', '10:00:00', '16:00:00', '06:00:00', 'Ekonomi', 70, 60000.00),
+('Gajah Ongko', 'Surabaya', 'Tuban', '12:30:00', '15:30:00', '03:00:00', 'Bisnis', 40, 55000.00),
+('Progo', 'Surabaya', 'Jember', '08:30:00', '13:00:00', '04:30:00', 'Eksekutif', 20, 90000.00),
+('Argo Lawu', 'Surabaya', 'Solo', '07:00:00', '12:00:00', '05:00:00', 'Eksekutif', 30, 100000.00),
+('Kutojaya Utara', 'Surabaya', 'Kertosono', '11:30:00', '14:30:00', '03:00:00', 'Bisnis', 60, 55000.00),
+('Mutiara Timur', 'Surabaya', 'Malang', '09:00:00', '11:30:00', '02:30:00', 'Eksekutif', 40, 75000.00),
+('Sritanjung', 'Malang', 'Blitar', '08:30:00', '10:30:00', '02:00:00', 'Ekonomi', 70, 48000.00);
+
+-- Membuat tabel riwayat_pembelian_user
+CREATE TABLE IF NOT EXISTS riwayat_pembelian_user (
+    id_tiket INT AUTO_INCREMENT PRIMARY KEY,
+    nama_kereta VARCHAR(100),
+    st_awal VARCHAR(100),
+    st_akhir VARCHAR(100),
+    waktu_berangkat TIME,
+    waktu_tiba TIME,
+    durasi_perjalanan TIME,
+    harga_tiket DECIMAL(10,2),
+    waktu_pembayaran DATETIME,
+    status_tiket VARCHAR(50)
+);
+
+-- Membuat tabel riwayat_pembelian_admin
+CREATE TABLE IF NOT EXISTS riwayat_pembelian_admin (
+    id_tiket INT AUTO_INCREMENT PRIMARY KEY,
+    nama_kereta VARCHAR(100),
+    st_awal VARCHAR(100),
+    st_akhir VARCHAR(100),
+    harga_tiket DECIMAL(10,2),
+    waktu_pembayaran DATETIME,
+    jenis_pembayaran VARCHAR(50),
+    nama_lengkap VARCHAR(100)
+);
+
